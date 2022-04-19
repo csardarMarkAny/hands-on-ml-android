@@ -85,6 +85,9 @@ class PoseGraphic internal constructor(
     // Draw all the points
     for (landmark in landmarks) {
       drawPoint(canvas, landmark, whitePaint)
+      android.util.Log.d("MarkAny", "MarkAny: All: Confidence = ${landmark.inFrameLikelihood}, " +
+              "landmarkType = ${landmark.landmarkType}, x, y = ${landmark.position}")
+
       if (visualizeZ && rescaleZForVisualization) {
         zMin = min(zMin, landmark.position3D.z)
         zMax = max(zMax, landmark.position3D.z)
